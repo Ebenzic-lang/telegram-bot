@@ -157,7 +157,14 @@ def main():
 
     print("Bot is running...")
 
-    app.run_polling()
+    import asyncio
+
+async def run():
+    await app.initialize()
+    await app.start()
+    await app.updater.start_polling()
+
+asyncio.run(run())
 
 
 if __name__ == "__main__":
