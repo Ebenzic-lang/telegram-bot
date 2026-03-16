@@ -11,7 +11,7 @@ from telegram.ext import (
 # CONFIGURATION
 # =============================
 
-BOT_TOKEN = "8540733828:AAHkoAdFkPy5DEXkk63JIDayi63fGW1hOSA"
+BOT_TOKEN = "8540733828:AAF5YcwK7zca9S5aM_Q-lr_pot3j0dlB6LY"
 
 CHANNEL_USERNAME = "@Chealseanews"
 
