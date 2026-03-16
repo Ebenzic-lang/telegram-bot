@@ -1,11 +1,6 @@
 import logging
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import (
-    Application,
-    CommandHandler,
-    CallbackQueryHandler,
-    ContextTypes,
-)
+from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
 
 # =============================
 # CONFIGURATION
@@ -96,10 +91,7 @@ async def check_membership(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
             text = (
                 "❌ *Not subscribed yet.*\n\n"
-                "Join the channel to unlock:\n"
-                "• Exclusive drops\n"
-                "• Winner alerts\n"
-                "• Daily opportunities"
+                "Join the channel to unlock."
             )
 
             await query.edit_message_text(
@@ -109,12 +101,8 @@ async def check_membership(update: Update, context: ContextTypes.DEFAULT_TYPE):
             )
 
     except Exception as e:
-
         logger.error(e)
-
-        await query.message.reply_text(
-            "⚠️ Error checking subscription. Please try again."
-        )
+        await query.message.reply_text("⚠️ Error checking subscription.")
 
 # =============================
 # OFFER BUTTON
@@ -133,8 +121,7 @@ async def offer(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     text = (
         "🎁 *Today's Special Offer*\n\n"
-        "Limited-time opportunity available today.\n"
-        "Tap below to start."
+        "Limited-time opportunity available today."
     )
 
     await query.message.reply_text(
@@ -144,7 +131,7 @@ async def offer(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 # =============================
-# MAIN FUNCTION
+# MAIN
 # =============================
 
 def main():
@@ -157,15 +144,7 @@ def main():
 
     print("Bot is running...")
 
-    import asyncio
-
-async def run():
-    await app.initialize()
-    await app.start()
-    await app.updater.start_polling()
-
-asyncio.run(run())
-
+    app.run_polling()
 
 if __name__ == "__main__":
     main()
