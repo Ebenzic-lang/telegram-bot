@@ -6,7 +6,7 @@ from telegram.ext import Application, CommandHandler, CallbackQueryHandler, Cont
 # CONFIGURATION
 # =============================
 
-BOT_TOKEN = "8540733828:AAF5YcwK7zca9S5aM_Q-lr_pot3j0dlB6LY"
+BOT_TOKEN = "8540733828:AAGKSE-EcMlrIOft4gCUhhFEuifg351O7So"
 
 CHANNEL_USERNAME = "@Chealseanews"
 
